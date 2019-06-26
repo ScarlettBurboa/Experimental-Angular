@@ -1,0 +1,32 @@
+Componente:
+Un componente controlara un trozo de pantalla o de la vista (header, footer, sections, etc).
+Todo lo que puede ser visto en pantalla son creados por componentes, 
+La logica de un componente dentro de una clase en Angular es que da soporte a una vista interactuando con ella a través de un API con 
+propiedades o metodos. 
+El componente hace de mediador entre la vista y la logica de la app, donde se incluirá el modelo de datos, es decir una especie de controlador
+
+Plantilas:
+Vistas de los componentes, son html con sintaxis de Angular que trabaja con directivas como ngIf ngFor etc. 
+
+Dentro de las clases de Angular tenemos decoradores y metadatos: 
+Con los decoradores (patrón de diseño), vamos a configurar dinamicamente atributos/metadatos de clases y componentes
+Los metadatos van a describir a las clases pero tambien describen "relaciones", por ejemplo, si tenemos un componente y una 
+plantilla el metadato se va a encargar de decirle a Angular que ese componente y esa plantilla van juntas, entre otros
+
+Servicios: 
+Son "clases" con un objetivo claro, facilita la reutilización de codigo y son un tipo de elemento dentro de la arquitectura
+de Angular y mediante la inyección de dependencias los podemos usar en otros componentes principales. 
+
+Providers: 
+Son servicios que nos "proveen" de datos o funcionalidades mediante sus métodos. Existen Providers/servicios propios de Angular o creados
+por nosotros mismos.
+
+Directivas: 
+Son funcionalidades aplicables al DOM y a los elementos HTML en las plantillas de un componente. Por ejemplo una directiva puede 
+para controlar que un "div" se muestre o no, y también para rrecorrer un array en la vista, tambien sirven para darle estilos a un elemento
+html o también para interactuar con el modelo de datos del componente. 
+
+HOOKS / eventos de ciclos de vida
+Eventos que se ejecutan en un momento dado del clico de vida del componente, es decir son eventos
+que se van a lanzar dependiendo del estado de un componente. Ejemplo OnInit (se ejecuta al inicio del componente al cargar) es un Hook Docheck es otro HOOK
+(se ejcuta al haber un cambio en el componente)

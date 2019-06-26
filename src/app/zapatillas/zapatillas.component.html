@@ -1,0 +1,64 @@
+<p>Añadir marca</p>
+<!-- <input type="text" [(ngModel)]="mi_marca" (blur)="onBlur()" />
+ --><input type="text" [(ngModel)]="mi_marca" (keyup.enter)="mostrarPalabra()" />
+
+<button (click)="getMarca()">Marca</button>
+<button (click)="addMarca()">Añadir Marca</button>
+<!-- Two way data-binding  es que un elemento ambie su valor tanto en e
+front end como en la logica de TS -->
+<p>{{ mi_marca }}</p>
+<p>Compra las zapatillas de las mejores marcas</p>
+<ul>
+  <li *ngFor="let marca of marcas; let indice = index">
+    {{ indice + ' ' + marca }}
+    <button (click)="borrarMarca(indice)">Borrar</button>
+  </li>
+  <!-- Muestra marcas de array marcas -->
+</ul>
+<ul>
+  <li *ngFor="let deportiva of zapatillas">
+    <span
+      [ngStyle]="{
+        'text-decoration': !deportiva.stock ? 'line-through' : 'none'
+      }"
+      >{{ deportiva.nombre }} - <strong
+      [class.altoprecio]="deportiva.precio > 80"
+     [ngClass]="{
+       'fondorojo': deportiva.precio >= 90, 
+       'subrayado': deportiva.marca == 'leon'}"
+          >$ {{ deportiva.precio }}</strong></span>
+    <span
+      *ngIf="deportiva.precio <= 80"
+      [style.background]="deportiva.precio <= 80 ? 'green' : 'transparent'"
+      [style.color]="deportiva.precio <= 80 ? 'white' : 'black'"
+    >
+      > ¡Oferta!</span
+    >
+  </li>
+</ul>
+
+<p>El color de la mayria de nuestras zapatillas es:</p>
+<input type="text" [(ngModel)]="color" />
+<ul [ngSwitch]="color">
+  <li *ngSwitchCase="'yellow'">
+    El color predominante es <span [ngStyle]="{ background: color }"> Amarillo </span>
+  </li>
+  <li *ngSwitchCase="'red'">
+    El color predominante es <span [ngStyle]="{ background: color }"> rojo </span>
+  </li>
+  <li *ngSwitchCase="'blue'">
+    El color predominante es <span [ngStyle]="{ background: color }"> azul </span>
+  </li>
+  <li *ngSwitchCase="'orange'">
+    El color predominante es <span [ngStyle]="{ background: color }"> orange</span>
+  </li>
+</ul>
+<!-- 
+  [ngStyle] = agregar estilos con condiciones
+  [style.background] = agregar un estilo directo como background
+  [class.clase] = agregar una clase con condiciones
+  [(ngModel)] = obtener el valor de un input para cambiar una propiedad en el ts
+  [ngClass]="['fondorojo', 'subrayado', 'grande']" sirve para colocar varias clases de css
+  al codigo
+
+-->

@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>Welcome to {{ title }}!</h1>
+<nav>
+  <a [routerLink]="['/home']" [routerLinkActive]="['active']">HOME</a>
+  <a [routerLink]="['/zapatillas']" [routerLinkActive]="['active']">ZAPATILLAS</a>
+  <a [routerLink]="['/cursos']" [routerLinkActive]="['active']">CURSOS</a>
+  <a [routerLink]="['/videojuegos']" [routerLinkActive]="['active']">VIDEOjUEGOS</a>
+  <a [routerLink]="['/externo']" [routerLinkActive]="['active']">EXTERNO</a>
+
+</nav>
+  <button (click)="ocultar_videojuegos(false)" *ngIf="mostrar_videojuegos">Ocultar</button>
+  <button (click)="ocultar_videojuegos(true)" *ngIf="!mostrar_videojuegos">Mostrar</button>
+  <app-videojuegos *ngIf="mostrar_videojuegos"></app-videojuegos>
+  <router-outlet></router-outlet>
+</div>
