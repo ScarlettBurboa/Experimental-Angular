@@ -1,3 +1,7 @@
-<p>
-  externo works!
-</p>
+<input type="text" [(ngModel)]="userId" (keyup.enter)="cargaUsuario()" />
+<div *ngIf="users">
+  <img src="{{ users.avatar }}" alt="" srcset="" />
+  <h2>Nombre: {{ users.first_name }} {{ users.last_name }}</h2>
+  <p>Email: {{ users.email }}</p>
+  <p>ID: {{ users.id }}</p>
+</div>
